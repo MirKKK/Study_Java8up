@@ -1,4 +1,4 @@
-package club.kegh.java8;
+package club.kegh.java8.stream;
 
 import org.junit.Test;
 
@@ -29,13 +29,13 @@ public class Stream_TestAPI_1 {
         Stream<Integer> stream3 = Stream.of(1,2,3,4,5,6);
 
         //4. 创建无限流
-        //迭代,累加
+        //4-1迭代,累加
         Stream<Integer> stream4 = Stream.iterate(0, (x) -> x + 2).limit(10);
-        stream3.forEach(System.out::println);
-
-        //生成，随机
-        Stream<Double> stream4_2 = Stream.generate(Math::random).limit(2);
         stream4.forEach(System.out::println);
+
+        //4-2生成，随机
+        Stream<Double> stream4_2 = Stream.generate(Math::random).limit(2);
+        stream4_2.forEach(System.out::println);
     }
 
 }
